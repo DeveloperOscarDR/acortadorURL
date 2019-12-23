@@ -1,0 +1,9 @@
+extends master
+block content 
+    //- lo que se pondra en el master
+    form(action="/" method="POST" id="agregar-url")
+        legend Añade tu URL en el siguiente formulario
+        .campo
+            input(type="url" name="urlOriginal" id="urlOriginal" placeholder="Añade tu URL" required)
+        .campo.enviar
+            input(type="submit" class="btn" value="Acortar")
