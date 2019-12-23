@@ -5,11 +5,11 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const app = express();
-const host = process.env.HOST || '0.0.0.0';
+// const host = process.env.HOST || '0.0.0.0';
 const port = process.env.PORT || 3000;
 //Importar variables de entorno locales 
-require('dotenv').config({ path: 'variables.env' });
-console.log(process.env.DB_URL)
+// require('dotenv').config({ path: 'variables.env' });
+// console.log(process.env.DB_URL)
 
 // Body parser para leer los datos del formulario
 app.use(bodyParser.json());
@@ -34,6 +34,6 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb+srv://root:root@cluster0-371br.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true
 })
-app.listen(port, host, () => {
+app.listen(port, () => {
     console.log('Servidor funcionando correctamente');
 });
